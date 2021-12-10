@@ -53,8 +53,8 @@ public class Users {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public String getUserid() {
+//
+    public String getUserid(String key) {
         return userid;
     }
 
