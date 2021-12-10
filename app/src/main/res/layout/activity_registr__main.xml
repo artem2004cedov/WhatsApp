@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/Liner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/wotg" />
+
+
+        <EditText
+            android:id="@+id/ed_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:hint="Name"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/ed_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:hint="Email"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/ed_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:hint="Password"
+            android:padding="12dp"
+            android:password="true"
+            android:textAlignment="center"
+            android:textColorHint="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_akk_est"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickText"
+            android:padding="8dp"
+            android:layout_marginStart="190dp"
+            android:text="Уже есть аккаунт.войти"
+            android:textSize="16dp"
+            android:textStyle="italic" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_registation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="100dp"
+                android:layout_weight="1"
+                android:background="@color/main_color"
+                android:onClick="onClickRegistr"
+                android:text="регистрация " />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_google"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="100dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:onClick="onClickGoogle"
+                android:drawableStart="@drawable/googleg_standard_color_18"
+                android:text="Gogole " />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
