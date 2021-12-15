@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/w1"
+    tools:context=".Activity.SetingsActivity">
+
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_color">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/arrow_back_24"
+            android:gravity="center"
+            android:onClick="ocCliceNazad" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:gravity="center"
+            android:text="Настройки"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="normal" />
+    </Toolbar>
+
+
+    <RelativeLayout
+        android:id="@+id/profale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:padding="10dp"
+            android:src="@drawable/profile" />
+
+        <ImageView
+            android:id="@+id/image_soxron_profil"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="105dp"
+            android:background="@drawable/ic_baseline_camera_alt_24" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/liner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profale"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Имя :  "
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/ed_name_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введи имя пользователя"
+            android:textColor="@color/white"
+            android:textColorHint="#BFBDBD" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/liner"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Статус : "
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/ed_status_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введи статус"
+            android:textColor="@color/white"
+            android:textColorHint="#BFBDBD" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_save"
+        android:layout_width="120dp"
+        android:layout_below="@+id/lin"
+        android:text="Сохронить"
+        android:background="@drawable/buttun_staly"
+        android:textColor="@color/main_color"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"/>
+    
+    
+
+
+
+</RelativeLayout>

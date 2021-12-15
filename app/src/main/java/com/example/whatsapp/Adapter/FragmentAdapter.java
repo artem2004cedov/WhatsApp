@@ -52,6 +52,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         if (position == 2) {
             title = "звонки";
         }
+
         return title;
     }
 }

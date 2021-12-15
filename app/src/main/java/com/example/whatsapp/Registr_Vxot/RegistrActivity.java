@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.whatsapp.MainActivity;
+import com.example.whatsapp.Activity.MainActivity;
 import com.example.whatsapp.R;
 import com.example.whatsapp.Users.Users;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -89,11 +89,9 @@ public class RegistrActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        // записывамем в обьект name, email, password
                         Users users = new Users(name, email, password);
-                        // получить id пользователя
                         String id = task.getResult().getUser().getUid();
-                        // содамет базу с названием Users, в Usera передает id пользователя и веденые данные
+                        // содамет базу с названием Users, передает id пользователя и веденые данные
                         database.getReference().child("Users").child(id).setValue(users);
                         progressDialog.dismiss();
                         Intent intent = new Intent(RegistrActivity.this, MainActivity.class);

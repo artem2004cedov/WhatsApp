@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.whatsapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,10 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WhatsApp">
-        <activity android:name=".Registr_Vxot.VxotActivity"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Activity.WelcomMainActivity"/>
+        <activity android:name=".Activity.SetingsActivity" />
+        <activity android:name=".Chats.GroopActivity" />
+        <activity android:name=".Chats.CathDateActivity" />
+        <activity android:name=".Registr_Vxot.VxotActivity" />
+        <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Registr_Vxot.RegistrActivity" />
-        <activity android:name=".WelcomMainActivity">
+        <activity android:name=".Activity.ZastavkaActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

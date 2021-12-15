@@ -6,6 +6,11 @@
     android:layout_height="match_parent">
 
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="@drawable/w1"
+        android:layout_height="match_parent"/>
+
     <LinearLayout
         android:id="@+id/Liner"
         android:layout_width="match_parent"
@@ -14,11 +19,15 @@
         android:layout_centerHorizontal="true"
         android:orientation="vertical">
 
+
+
+
         <ImageView
             android:layout_width="300dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            android:src="@drawable/wotg" />
+            android:src="@drawable/ic_whatsapp" />
+
 
 
         <EditText
@@ -31,7 +40,9 @@
             android:hint="Email"
             android:padding="12dp"
             android:textAlignment="center"
-            android:textColorHint="@color/black" />
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            />
 
         <EditText
             android:id="@+id/ed_password_vxot"
@@ -44,7 +55,8 @@
             android:padding="12dp"
             android:password="true"
             android:textAlignment="center"
-            android:textColorHint="@color/black" />
+            android:textColorHint="@color/white"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/tv_akk_est"
@@ -55,6 +67,7 @@
             android:onClick="onClickText"
             android:padding="8dp"
             android:layout_marginStart="220dp"
+            android:textColor="@color/white"
             android:text="Зарегистрироваться"
             android:textSize="16dp"
             android:textStyle="italic" />
@@ -70,6 +83,7 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:textColor="@color/white"
                 android:background="@color/main_color"
                 android:onClick="onClickVxot"
                 android:text="вхот"

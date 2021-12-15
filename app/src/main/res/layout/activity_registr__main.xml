@@ -5,20 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/w1" />
 
     <LinearLayout
         android:id="@+id/Liner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="300dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            android:src="@drawable/wotg" />
+            android:src="@drawable/ic_whatsapp" />
 
 
         <EditText
@@ -26,12 +29,13 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:hint="Name"
             android:padding="12dp"
             android:textAlignment="center"
-            android:textColorHint="@color/black" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/ed_email"
@@ -43,7 +47,8 @@
             android:hint="Email"
             android:padding="12dp"
             android:textAlignment="center"
-            android:textColorHint="@color/black" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/ed_password"
@@ -56,18 +61,21 @@
             android:padding="12dp"
             android:password="true"
             android:textAlignment="center"
-            android:textColorHint="@color/black" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <TextView
             android:id="@+id/tv_akk_est"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="190dp"
             android:onClick="onClickText"
             android:padding="8dp"
-            android:layout_marginStart="190dp"
             android:text="Уже есть аккаунт.войти"
+            android:textColor="@color/white"
             android:textSize="16dp"
             android:textStyle="italic" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginBottom="100dp"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:background="@color/main_color"
                 android:onClick="onClickRegistr"
@@ -92,8 +101,8 @@
                 android:layout_marginBottom="100dp"
                 android:layout_weight="1"
                 android:background="@color/white"
-                android:onClick="onClickGoogle"
                 android:drawableStart="@drawable/googleg_standard_color_18"
+                android:onClick="onClickGoogle"
                 android:text="Gogole " />
 
         </LinearLayout>

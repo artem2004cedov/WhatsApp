@@ -1,7 +1,7 @@
 package com.example.whatsapp.Users;
 
 public class Users {
-        String profileps, username, email, password, userid, listMassege;
+        String profileps, username, email, password, userid, listMassege, status;
 
     public Users(String profileps, String username, String email, String password, String userid, String listMassege) {
         this.profileps = profileps;
@@ -12,7 +12,17 @@ public class Users {
         this.listMassege = listMassege;
     }
 
-    public Users( String username, String email, String password) {
+    public Users(String profileps, String username, String email, String password, String userid, String listMassege, String status) {
+        this.profileps = profileps;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.userid = userid;
+        this.listMassege = listMassege;
+        this.status = status;
+    }
+
+    public Users(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -20,7 +30,21 @@ public class Users {
 
     public Users() {}
 
+    public String getUserid() {
+        return userid;
+    }
 
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getProfileps() {
         return profileps;
@@ -54,13 +78,6 @@ public class Users {
         this.password = password;
     }
 
-    public String getUserid() {
-        return userid;
-    }
-
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
 
     public String getListMassege() {
         return listMassege;

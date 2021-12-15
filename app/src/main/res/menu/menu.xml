@@ -16,12 +16,6 @@
     </item>
 
     <item
-        android:id="@+id/menu_find_people"
-        android:title="Поиск"
-        app:showAsAction="never">
-    </item>
-
-    <item
         android:id="@+id/menu_setting"
         android:title="Настройки"
         app:showAsAction="never">

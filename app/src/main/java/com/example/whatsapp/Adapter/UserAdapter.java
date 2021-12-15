@@ -1,5 +1,99 @@
 package com.example.whatsapp.Adapter;
 
-public class UserAdapter {
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.whatsapp.Chats.CathDateActivity;
+import com.example.whatsapp.R;
+import com.example.whatsapp.Users.Users;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.VievHolder> {
+    private ArrayList<Users> list;
+    private Context context;
+
+    public UserAdapter(ArrayList<Users> list, Context context) {
+        this.list = list;
+        this.context = context;
+    }
+
+    @NonNull
+    @Override
+    public VievHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.simpl_show_user, parent, false);
+        return new VievHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull VievHolder holder, int position) {
+        Users users = list.get(position);
+        // установка картинки, если нет картинки то по умолчанию ставиться
+        Picasso.get(). load(users.getProfileps()).placeholder(R.drawable.profile).into(holder.imageViev);
+        // установка текста
+        holder.tv_name.setText(users.getUsername());
+
+        // установка последнего сообщение
+       FirebaseDatabase.getInstance().getReference().child("chats")
+               .child(FirebaseAuth.getInstance().getUid() + users.getUserid())
+               .orderByChild("timestamp")
+               .limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot snapshot) {
+               if (snapshot.hasChildren()) {
+                   for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                       holder.last_massege.setText(dataSnapshot.child("message").getValue().toString());
+                   }
+               }
+           }
+
+           @Override
+           public void onCancelled(@NonNull DatabaseError error) {
+
+           }
+       });
+
+       // передача инфи о пользоватеи
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, CathDateActivity.class);
+                intent.putExtra("userid", users.getUserid());
+                intent.putExtra("profailPic", users.getProfileps());
+                intent.putExtra("username", users.getUsername());
+                context.startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+
+    public class VievHolder extends RecyclerView.ViewHolder {
+        private TextView tv_name, last_massege;
+        private ImageView imageViev;
+
+        public VievHolder(@NonNull View itemView) {
+            super(itemView);
+            tv_name = itemView.findViewById(R.id.tv_name);
+            last_massege = itemView.findViewById(R.id.tv_massege);
+            imageViev = itemView.findViewById(R.id.profile_image);
+        }
+    }
 }
