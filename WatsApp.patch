@@ -1,0 +1,15 @@
+Index: app/src/main/java/com/example/whatsapp/Activity/ZastavkaActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/whatsapp/Activity/ZastavkaActivity.java	(revision c62d715f9de9604cc646b3c040d3c73061730ea8)
++++ app/src/main/java/com/example/whatsapp/Activity/ZastavkaActivity.java	(date 1639581605893)
+@@ -12,6 +12,7 @@
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
++
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_zastavka);
+         getSupportActionBar().hide();
